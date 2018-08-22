@@ -17,11 +17,11 @@ describe("ContactController", () => {
   describe("#addContact()", () => {
 
      it("should add a single contact into the book", (done) => {
-       this.book.addContact("Alice", "001-101-1010", "Alice.who@gmail.com")
+       this.book.addContact("Alice", "001-101-1010", "alice@gmail.com")
           .then((contact) => {
             expect(contact.name).toBe("Alice");
             expect(contact.phone).toBe("001-101-1010");
-            expect(contact.email).toBe("Alice.who@gmail.com");
+            expect(contact.email).toBe("alice@gmail.com");
             done();
           })
           .catch((err) => {
@@ -45,7 +45,7 @@ describe("ContactController", () => {
       });
 
       it("should return an array of contacts when contacts are available", (done) => {
-        this.book.addContact("Alice", "001-101-1010", "alice@example.com")
+        this.book.addContact("Alice", "001-101-1010", "alice@gmail.com")
         .then(() => {
           this.book.getContacts()
           .then((contacts) => {
